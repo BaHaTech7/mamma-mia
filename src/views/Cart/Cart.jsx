@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Layout = () => {
+const Cart = () => {
     return (
         <div>
-            
+            <h1>Carrito</h1>
         </div>
     )
 }
 
-export default Layout
+export default Cart

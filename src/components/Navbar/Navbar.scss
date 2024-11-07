@@ -1,0 +1,7 @@
+@use "../../assets/css/modules/mixins";
+@use "../../assets/css/modules/colors";
+
+nav {
+  @include mixins.configurarMedidas(60px, 100%);
+  background-color: colors.$info-color;
+}
