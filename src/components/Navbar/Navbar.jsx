@@ -5,8 +5,17 @@ import "./Navbar.scss"
 const Navbar = () => {
     return (
         <nav>
-            <NavLink to="/home">Home</NavLink>
-            <NavLink to="/carrito">Carro</NavLink>
+            <div className="titulo">
+                <NavLink to="/home">
+                    <h3>🍕 Pizzería Mamma Mía !</h3>
+                </NavLink>
+            </div>
+            <div className="navbar-carro">
+                <NavLink to="/carrito">
+                    <i className="icono-carro fa-solid fa-2x fa-cart-shopping"></i>
+                </NavLink>
+                <h3>$134.000</h3>
+            </div>
         </nav>
     )
 }

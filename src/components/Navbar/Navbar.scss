@@ -3,5 +3,53 @@
 
 nav {
   @include mixins.configurarMedidas(60px, 100%);
+  @include mixins.establecerFlex();
+  @include mixins.alinearComponentes(space-around);
   background-color: colors.$info-color;
 }
+
+.titulo {
+  h3 {
+    color: colors.$link-color;
+  }
+
+  a:link, a:visited, a:active {
+    text-decoration:none;
+  }
+
+  a:hover {
+    h3 {
+      color: colors.$link-hover-color;
+    }
+  }
+}
+
+.navbar-carro {
+
+  @include mixins.establecerFlex(row, wrap, 15px);
+
+  .icono-carro {
+    margin-top: 1px;
+    color: colors.$link-color;
+  }
+
+  .icono-carro:hover {
+    color: colors.$link-hover-color;
+  }
+
+
+  h3 {
+    color: colors.$link-color;
+  }
+
+  a:link, a:visited, a:active {
+    text-decoration:none;
+  }
+
+  a:hover {
+    h3 {
+      color: colors.$link-hover-color;
+    }
+  }
+}
+
