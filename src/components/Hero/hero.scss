@@ -21,5 +21,12 @@
     @include mixins.establecerFlex(column, wrap);
     @include mixins.alinearComponentes();
 
+    hr {
+      height: 2px;
+      width: 80%;
+      background-color: colors.$hero-leyenda-color;
+      opacity: 0.4;
+    }
+
   }
 }
