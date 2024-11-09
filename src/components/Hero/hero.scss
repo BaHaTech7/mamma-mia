@@ -1,0 +1,25 @@
+@use "../../assets/css/modules/mixins";
+@use "../../assets/css/modules/colors";
+
+.hero {
+  position: relative;
+
+  .imagen {
+    img {
+      height: 300px;
+      width:  100%;
+    }
+  }
+
+  .leyenda {
+    position: absolute;
+    color: colors.$hero-leyenda-color;
+    height: 100%;
+    width: 100%;
+    background-color: colors.$hero-background;
+
+    @include mixins.establecerFlex(column, wrap);
+    @include mixins.alinearComponentes();
+
+  }
+}
