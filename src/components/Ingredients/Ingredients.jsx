@@ -6,7 +6,7 @@ const Ingredients = (props) => {
         <ul>
             {
                 props.ingredientes.map( ingrediente => (
-                    <li>🍕 {ingrediente}</li>
+                    <li key={ingrediente}>🍕 {ingrediente}</li>
                 ))
             }
         </ul>

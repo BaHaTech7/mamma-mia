@@ -3,18 +3,40 @@ import "./pizza_catalog.scss"
 import Ingredients from "../Ingredients/Ingredients";
 import {PizzeriaContext} from "../../context/PizzeriaProvider";
 import {obtenerCLP} from "../../util/clp_parser";
+import {useNavigate} from "react-router-dom";
 
 const PizzaCatalog = () => {
 
-    const {catalogo} = useContext(PizzeriaContext)
+    const {catalogo, setPizzaActiva, pizzaActiva} = useContext(PizzeriaContext)
+    const navigate = useNavigate();
+
+    const handleShowPizzaDetail = (id) => {
+        const asignarPizzaActiva = (id) => {
+            let pizzaSeleccionada = {}
+
+            for (let pizza of catalogo) {
+                if (pizza.id === id) {
+                    pizzaSeleccionada = pizza
+                    break;
+                }
+            }
+
+            setPizzaActiva(pizzaSeleccionada)
+        }
+        asignarPizzaActiva(id)
+
+        if (pizzaActiva !== {}) {
+            navigate(`/pizza/${id}`)
+        }
+    }
 
     return (
         <div className="row mt-5">
             {
                 catalogo.map( pizza => (
-                    <article className="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                    <article className="col-12 col-md-6 col-lg-4 col-xl-3 mb-3" key={pizza.id}>
                         <div className="card">
-                            <img src={pizza.img} className="card-img-top" alt="..."/>
+                            <img src={pizza.img} className="card-img-top" alt={pizza.name}/>
                             <div className="card-body">
                                 <h3 className="card-title">{pizza.name}</h3>
                                 <hr />
@@ -25,7 +47,8 @@ const PizzaCatalog = () => {
                                 <li className="list-group-item">
                                     <h2 className="my-3">{obtenerCLP(pizza.price)}</h2>
                                     <div className="mb-2">
-                                        <button className="btn btn-info color-info">
+                                        <button className="btn btn-info color-info"
+                                                onClick={() => {handleShowPizzaDetail(pizza.id)}}>
                                             👀 Ver Más
                                         </button>
                                         &nbsp; &nbsp; &nbsp; &nbsp;
