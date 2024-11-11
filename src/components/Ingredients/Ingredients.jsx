@@ -1,12 +1,14 @@
 import React from 'react'
 import "./ingredients.scss"
 
-const Ingredients = () => {
+const Ingredients = (props) => {
     return (
         <ul>
-            <li>🍕 Pan</li>
-            <li>🍕 Queso</li>
-            <li>🍕 Carne</li>
+            {
+                props.ingredientes.map( ingrediente => (
+                    <li>🍕 {ingrediente}</li>
+                ))
+            }
         </ul>
     )
 }
