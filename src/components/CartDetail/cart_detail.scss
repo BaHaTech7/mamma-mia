@@ -1,0 +1,29 @@
+@use "../../assets/css/modules/mixins";
+@use "../../assets/css/modules/colors";
+
+.detalle {
+  background-color: colors.$cart-detail-background;
+
+  @include mixins.establecerFlex(column, nowrap);
+  @include mixins.alinearComponentes();
+
+  height: 100%;
+  width: 100%;
+
+  .titulo-wrapper {
+    width: 80%;
+    max-width: 80%;
+
+    @include mixins.establecerFlex();
+    @include mixins.alinearComponentes(flex-start);
+  }
+
+  .pedido {
+    background-color: colors.$pedido-background;
+    width: 80%;
+    max-width: 80%;
+
+  }
+
+}
+

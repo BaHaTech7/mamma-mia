@@ -4,10 +4,12 @@ import PizzaCatalog from "../../components/PizzaCatalog/PizzaCatalog";
 
 const Home = () => {
     return (
-        <>
-            <Hero />
-            <PizzaCatalog />
-        </>
+        <div className="row">
+            <div className="col-12">
+                <Hero />
+                <PizzaCatalog />
+            </div>
+        </div>
     )
 }
 

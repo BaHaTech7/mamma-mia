@@ -11,7 +11,7 @@ const PizzaCatalog = () => {
                         <div className="card-body">
                             <h3 className="card-title">Pizza Genérica</h3>
                             <hr />
-                            <h5 className="card-title">Ingredientes</h5>
+                            <h5 className="card-title">Ingrediente:</h5>
                             <Ingredients />
                         </div>
                         <ul className="list-group list-group-flush">

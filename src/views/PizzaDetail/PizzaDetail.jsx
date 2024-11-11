@@ -1,9 +1,12 @@
 import React from 'react'
+import PizzaDetailCard from "../../components/PizzaDetailCart/PizzaDetailCard";
 
 const PizzaDetail = () => {
     return (
-        <div>
-            <h1>Detalles de pizza</h1>
+        <div className="row">
+            <div className="col-12">
+                <PizzaDetailCard />
+            </div>
         </div>
     )
 }

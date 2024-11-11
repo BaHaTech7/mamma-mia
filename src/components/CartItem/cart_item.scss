@@ -1,0 +1,33 @@
+@use "../../assets/css/modules/mixins";
+
+.item-wrapper {
+  .cart-item {
+
+    width: 100%;
+    @include mixins.establecerFlex(row);
+    @include mixins.alinearComponentes(space-between);
+
+    .nombre {
+
+      img {
+        height: 50px;
+        width: 50px;
+      }
+
+    }
+
+    .precio {
+
+    }
+
+  }
+
+  hr {
+    margin-top: 8px;
+    color: inherit;
+    border: 0;
+    border-top: 1px solid;
+    opacity: .25;
+  }
+
+}

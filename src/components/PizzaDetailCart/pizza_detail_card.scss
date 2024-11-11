@@ -1,0 +1,12 @@
+@use "../../assets/css/modules/mixins";
+@use "../../assets/css/modules/colors";
+
+.img-fluid {
+  max-width: 100%;
+  height: 100%;
+}
+
+.operaciones {
+  @include mixins.establecerFlex();
+  @include mixins.alinearComponentes(space-between, stretch);
+}

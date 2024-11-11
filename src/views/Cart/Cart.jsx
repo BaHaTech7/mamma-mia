@@ -1,9 +1,12 @@
 import React from 'react'
+import CartDetail from "../../components/CartDetail/CartDetail";
 
 const Cart = () => {
     return (
-        <div>
-            <h1>Carrito</h1>
+        <div className="row">
+            <div className="col-12">
+                <CartDetail />
+            </div>
         </div>
     )
 }
