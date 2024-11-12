@@ -1,10 +1,11 @@
 import React from 'react'
 import "./cart_summary.scss"
+import {obtenerCLP} from "../../util/clp_parser";
 
-const CartSummary = () => {
+const CartSummary = (props) => {
     return (
         <div className="summary-op-wrapper">
-            <h2>Total: <span>$134.000</span></h2>
+            <h2>Total: <span>{obtenerCLP(props.total)}</span></h2>
             <button className="btn btn-success">Ir a pagar</button>
         </div>
     )

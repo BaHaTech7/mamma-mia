@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import "./cart_detail.scss"
 import CartItem from "../CartItem/CartItem";
 import CartSummary from "../CartSummary/CartSummary";
+import {PizzeriaContext} from "../../context/PizzeriaProvider";
 
 const CartDetail = () => {
+
+    const {carro, total} = useContext(PizzeriaContext)
+
     return (
         <section className="detalle mt-5">
             <div className="titulo-wrapper">
@@ -11,10 +15,14 @@ const CartDetail = () => {
             </div>
             <div className="pedido mb-2">
                 <div className="unidades">
-                    <CartItem />
+                    {
+                        carro.map( cartItem => (
+                            <CartItem item={cartItem} />
+                        ))
+                    }
                 </div>
                 <div className="resumen pb-2">
-                    <CartSummary />
+                    <CartSummary total={total} />
                 </div>
             </div>
         </section>
