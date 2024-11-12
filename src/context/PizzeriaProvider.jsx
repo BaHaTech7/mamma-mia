@@ -6,7 +6,7 @@ export const PizzeriaContext = createContext()
 const PizzeriaProvider = (props) => {
 
     const [catalogo, setCatalogo] = useState([])
-    const [carro, setCarro] = useState({})
+    const [carro, setCarro] = useState([])
     const [pizzaActiva, setPizzaActiva] = useState({})
 
     return (

@@ -4,10 +4,11 @@ import Ingredients from "../Ingredients/Ingredients";
 import {PizzeriaContext} from "../../context/PizzeriaProvider";
 import {obtenerCLP} from "../../util/clp_parser";
 import {useNavigate} from "react-router-dom";
+import {useAgregarItemCarro} from "../../util/useAgregarItemCarro";
 
 const PizzaCatalog = () => {
 
-    const {catalogo, setPizzaActiva, pizzaActiva} = useContext(PizzeriaContext)
+    const {catalogo, setPizzaActiva} = useContext(PizzeriaContext)
     const navigate = useNavigate();
 
     const handleShowPizzaDetail = (id) => {
@@ -25,9 +26,11 @@ const PizzaCatalog = () => {
         }
         asignarPizzaActiva(id)
 
-        if (pizzaActiva !== {}) {
-            navigate(`/pizza/${id}`)
-        }
+        navigate(`/pizza/${id}`)
+    }
+
+    const handleAddProduct = (element) => {
+
     }
 
     return (
@@ -52,7 +55,8 @@ const PizzaCatalog = () => {
                                             👀 Ver Más
                                         </button>
                                         &nbsp; &nbsp; &nbsp; &nbsp;
-                                        <button className="btn btn-danger">
+                                        <button className="btn btn-danger"
+                                                onClick={ ()=>{handleAddProduct(pizza)}}>
                                             <i className="icono-carro fa-solid fa-cart-shopping"></i> Añadir
                                         </button>
                                     </div>
