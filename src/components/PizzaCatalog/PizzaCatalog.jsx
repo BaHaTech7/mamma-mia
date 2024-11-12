@@ -1,15 +1,79 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import "./pizza_catalog.scss"
-import Ingredients from "../Ingredients/Ingredients";
-import {PizzeriaContext} from "../../context/PizzeriaProvider";
-import {obtenerCLP} from "../../util/clp_parser";
-import {useNavigate} from "react-router-dom";
-import {useAgregarItemCarro} from "../../util/useAgregarItemCarro";
+import Ingredients from "../Ingredients/Ingredients"
+import {PizzeriaContext} from "../../context/PizzeriaProvider"
+import {obtenerCLP} from "../../util/clp_parser"
+import {useNavigate} from "react-router-dom"
 
 const PizzaCatalog = () => {
 
-    const {catalogo, setPizzaActiva} = useContext(PizzeriaContext)
+    const {catalogo, setPizzaActiva, carro, setCarro, setTotal} = useContext(PizzeriaContext)
     const navigate = useNavigate();
+
+    useEffect( () => {
+        const calcularTotal = () => {
+            let acumuladorTotal = 0
+
+            for (let item of carro) {
+                acumuladorTotal = acumuladorTotal + item.subtotal
+            }
+
+            return acumuladorTotal
+        }
+        setTotal(calcularTotal())
+    })
+
+    const handleAddProduct = (element) => {
+        const validarOperacion = () => {
+            let resultadoOperacion = false
+
+            const elementoExiste = (element) => {
+                let estado = false
+
+                if (carro.length === 0) {
+                    estado = false
+                } else {
+                    for (let pizza of carro) {
+                        if (pizza.idProducto === element.id) {
+                            estado = true
+                            break
+                        }
+                    }
+                }
+                return estado
+            }
+
+            const elementoValido = (element) => {
+                if (typeof(element) === "object") {
+                    return true
+                } else {
+                    return false
+                }
+            }
+
+            if (elementoValido(element)) {
+                if (!elementoExiste(element)) {
+                    setCarro([...carro,
+                        {
+                            idProducto: element.id,
+                            src: element.img,
+                            nombre: element.name,
+                            vUnitario: element.price,
+                            cantidad: 1,
+                            subtotal: element.price
+                        }
+                    ])
+                    resultadoOperacion = true
+                }
+            }
+
+            return resultadoOperacion
+        }
+
+        if (!validarOperacion()) {
+            alert("Producto repetido")
+        }
+    }
 
     const handleShowPizzaDetail = (id) => {
         const asignarPizzaActiva = (id) => {
@@ -27,10 +91,6 @@ const PizzaCatalog = () => {
         asignarPizzaActiva(id)
 
         navigate(`/pizza/${id}`)
-    }
-
-    const handleAddProduct = (element) => {
-
     }
 
     return (
