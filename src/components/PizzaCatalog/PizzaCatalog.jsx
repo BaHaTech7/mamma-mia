@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom"
 
 const PizzaCatalog = () => {
 
-    const {catalogo, setPizzaActiva, carro, setCarro, setTotal} = useContext(PizzeriaContext)
+    const {catalogo, setPizzaActiva, carro, setCarro, total, setTotal} = useContext(PizzeriaContext)
     const navigate = useNavigate();
 
     useEffect( () => {
@@ -21,7 +21,7 @@ const PizzaCatalog = () => {
             return acumuladorTotal
         }
         setTotal(calcularTotal())
-    })
+    },[carro,total])
 
     const handleAddProduct = (element) => {
         const validarOperacion = () => {
