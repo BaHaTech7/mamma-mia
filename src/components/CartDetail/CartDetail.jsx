@@ -17,7 +17,9 @@ const CartDetail = () => {
                 <div className="unidades">
                     {
                         carro.map( cartItem => (
-                            <CartItem item={cartItem} />
+                            <React.Fragment key={cartItem.idProducto}>
+                                <CartItem item={cartItem} />
+                            </React.Fragment>
                         ))
                     }
                 </div>

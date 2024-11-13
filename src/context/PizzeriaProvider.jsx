@@ -14,7 +14,7 @@ const PizzeriaProvider = (props) => {
         <PizzeriaContext.Provider value={{   catalogo, setCatalogo,
                                              carro, setCarro,
                                              pizzaActiva, setPizzaActiva,
-                                             total, setTotal}}>
+                                             total, setTotal }}>
             {props.children}
         </PizzeriaContext.Provider>
     )
