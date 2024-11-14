@@ -64,6 +64,11 @@ const CartItem = (props) => {
         }
     }
 
+    const handleDelete = (id) => {
+        const carroCopia = [...carro]
+        setCarro(carroCopia.filter(producto => (producto.idProducto !== id)))
+    }
+    
     return (
         <div className="item-wrapper px-2 py-2">
             <div className="cart-item">
@@ -76,6 +81,7 @@ const CartItem = (props) => {
                     <button className="btn btn-danger"  onClick={ () =>{ handleDecrement(props.item) }}>-</button> &nbsp;
                     <span>{props.item.cantidad}</span>  &nbsp;
                     <button className="btn btn-primary" onClick={ () =>{ handleIncrement(props.item) }}>+</button>
+                    <i className="fa-solid fa-trash" onClick={() => {handleDelete(props.item.idProducto)}}></i>
                 </div>
             </div>
             <hr />
