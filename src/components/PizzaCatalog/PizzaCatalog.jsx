@@ -1,17 +1,17 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useEffect, useRef} from 'react'
 import "./pizza_catalog.scss"
 import Ingredients from "../Ingredients/Ingredients"
 import {PizzeriaContext} from "../../context/PizzeriaProvider"
 import {obtenerCLP} from "../../util/clp_parser"
 import {useNavigate} from "react-router-dom"
 import {useAgregarProducto} from "../../Hooks/useAgregarProducto";
+import Modal from "../Modal/Modal";
 
 const PizzaCatalog = () => {
 
-    const {catalogo, toogle, setToogle} = useContext(PizzeriaContext)
+    const {catalogo, toogle, setToogle, messageStatus, setMessageStatus} = useContext(PizzeriaContext)
     const [agregarProductoCarro, errorObjeto, errorElementoExiste] = useAgregarProducto()
     const navigate = useNavigate();
-
 
     const handleAddProduct = (element) => {
         setToogle(!toogle)
@@ -20,10 +20,10 @@ const PizzaCatalog = () => {
 
     useEffect( ()=>{
         if (errorObjeto) {
-            alert("Objeto erroneo")
+
         }
         if (errorElementoExiste) {
-            alert("El producto ya estaba en el maldito carro")
+            setMessageStatus({...messageStatus, mostrar:true})
         }
     },[errorObjeto, errorElementoExiste, toogle])
 
@@ -64,6 +64,7 @@ const PizzaCatalog = () => {
                     </article>
                 ))
             }
+            <Modal />
         </div>
     )
 }

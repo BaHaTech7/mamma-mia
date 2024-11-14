@@ -10,13 +10,15 @@ const PizzeriaProvider = (props) => {
     const [pizzaActiva, setPizzaActiva] = useState({})
     const [total, setTotal] = useState(0)
     const [toogle, setToogle] = useState(true)
+    const [messageStatus, setMessageStatus] = useState({mostrar: false, operacion: ""})
 
     return (
         <PizzeriaContext.Provider value={{   catalogo, setCatalogo,
                                              carro, setCarro,
                                              pizzaActiva, setPizzaActiva,
                                              total, setTotal,
-                                             toogle, setToogle}}>
+                                             toogle, setToogle,
+                                             messageStatus, setMessageStatus}}>
             {props.children}
         </PizzeriaContext.Provider>
     )
