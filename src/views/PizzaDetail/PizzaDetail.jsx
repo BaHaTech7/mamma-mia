@@ -1,14 +1,14 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import PizzaDetailCard from "../../components/PizzaDetailCart/PizzaDetailCard";
 import {useParams} from "react-router-dom";
 import {PizzeriaContext} from "../../context/PizzeriaProvider";
 
 const PizzaDetail = () => {
 
-    const {catalogo, setPizzaActiva} = useContext(PizzeriaContext)
     const {id} = useParams()
+    const {catalogo} = useContext(PizzeriaContext)
 
-    const asignarPizzaActiva = (id) => {
+    const obtenerPizzaActiva = (id) => {
         let pizzaSeleccionada = {}
 
         for (let pizza of catalogo) {
@@ -17,14 +17,15 @@ const PizzaDetail = () => {
                 break
             }
         }
-        setPizzaActiva(pizzaSeleccionada)
+
+        return pizzaSeleccionada
     }
-    asignarPizzaActiva(id)
+
 
     return (
         <div className="row">
             <div className="col-12">
-                <PizzaDetailCard />
+                <PizzaDetailCard pizza = {obtenerPizzaActiva(id)} />
             </div>
         </div>
     )

@@ -1,9 +1,8 @@
 @use "../../assets/css/modules/mixins";
 @use "../../assets/css/modules/colors";
 
-.img-fluid {
-  max-width: 100%;
-  height: 100%;
+.img-tarjeta {
+  height: 100% !important;
 }
 
 .operaciones {

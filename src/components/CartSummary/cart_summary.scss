@@ -1,3 +1,11 @@
+@use "../../assets/css/modules/mixins";
+@use "../../assets/css/modules/colors";
+
 .summary-op-wrapper {
   margin-left: 8px;
+}
+
+.summary-op-wrapper-empty {
+  @include mixins.establecerFlex(column, wrap, normal 10px);
+  @include mixins.alinearComponentes();
 }
