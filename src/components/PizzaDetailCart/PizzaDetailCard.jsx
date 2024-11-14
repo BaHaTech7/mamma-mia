@@ -3,19 +3,20 @@ import Ingredients from "../Ingredients/Ingredients";
 import "./pizza_detail_card.scss"
 import {PizzeriaContext} from "../../context/PizzeriaProvider";
 import {obtenerCLP} from "../../util/clp_parser";
-import {useAgregarProducto} from "../../Hooks/useAgregarProducto";
+import {useAgregarProducto} from "../../hooks/useAgregarProducto";
+import Modal from "../Modal/Modal";
 
 const PizzaDetailCard = () => {
 
-    const {pizzaActiva, toogle, setToogle} = useContext(PizzeriaContext)
+    const {pizzaActiva, toogle, setToogle, messageStatus, setMessageStatus} = useContext(PizzeriaContext)
     const [agregarProductoCarro, errorObjeto, errorElementoExiste] = useAgregarProducto()
 
     useEffect( ()=>{
         if (errorObjeto) {
-            alert("Objeto erroneo")
+            setMessageStatus({...messageStatus, mostrar: true, operacion:"errorObjeto"})
         }
         if (errorElementoExiste) {
-            alert("El producto ya estaba en el maldito carro")
+            setMessageStatus({...messageStatus, mostrar: true, operacion:"errorElementoExiste"})
         }
     },[errorObjeto, errorElementoExiste, toogle])
 
@@ -46,6 +47,7 @@ const PizzaDetailCard = () => {
                     </div>
                 </div>
             </div>
+            <Modal />
         </div>
     )
 }

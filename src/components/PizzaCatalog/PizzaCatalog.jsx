@@ -4,7 +4,7 @@ import Ingredients from "../Ingredients/Ingredients"
 import {PizzeriaContext} from "../../context/PizzeriaProvider"
 import {obtenerCLP} from "../../util/clp_parser"
 import {useNavigate} from "react-router-dom"
-import {useAgregarProducto} from "../../Hooks/useAgregarProducto";
+import {useAgregarProducto} from "../../hooks/useAgregarProducto";
 import Modal from "../Modal/Modal";
 
 const PizzaCatalog = () => {
@@ -20,10 +20,10 @@ const PizzaCatalog = () => {
 
     useEffect( ()=>{
         if (errorObjeto) {
-
+            setMessageStatus({...messageStatus, mostrar: true, operacion:"errorObjeto"})
         }
         if (errorElementoExiste) {
-            setMessageStatus({...messageStatus, mostrar:true})
+            setMessageStatus({...messageStatus, mostrar: true, operacion:"errorElementoExiste"})
         }
     },[errorObjeto, errorElementoExiste, toogle])
 
