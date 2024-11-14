@@ -8,7 +8,7 @@ import {useAgregarProducto} from "../../Hooks/useAgregarProducto";
 
 const PizzaCatalog = () => {
 
-    const {catalogo, setPizzaActiva, toogle, setToogle} = useContext(PizzeriaContext)
+    const {catalogo, toogle, setToogle} = useContext(PizzeriaContext)
     const [agregarProductoCarro, errorObjeto, errorElementoExiste] = useAgregarProducto()
     const navigate = useNavigate();
 
@@ -28,20 +28,6 @@ const PizzaCatalog = () => {
     },[errorObjeto, errorElementoExiste, toogle])
 
     const handleShowPizzaDetail = (id) => {
-        const asignarPizzaActiva = (id) => {
-            let pizzaSeleccionada = {}
-
-            for (let pizza of catalogo) {
-                if (pizza.id === id) {
-                    pizzaSeleccionada = pizza
-                    break;
-                }
-            }
-
-            setPizzaActiva(pizzaSeleccionada)
-        }
-        asignarPizzaActiva(id)
-
         navigate(`/pizza/${id}`)
     }
 
