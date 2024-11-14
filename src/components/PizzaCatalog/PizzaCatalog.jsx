@@ -4,76 +4,28 @@ import Ingredients from "../Ingredients/Ingredients"
 import {PizzeriaContext} from "../../context/PizzeriaProvider"
 import {obtenerCLP} from "../../util/clp_parser"
 import {useNavigate} from "react-router-dom"
+import {useAgregarProducto} from "../../Hooks/useAgregarProducto";
 
 const PizzaCatalog = () => {
 
-    const {catalogo, setPizzaActiva, carro, setCarro, total, setTotal} = useContext(PizzeriaContext)
+    const {catalogo, setPizzaActiva, toogle, setToogle} = useContext(PizzeriaContext)
+    const [agregarProductoCarro, errorObjeto, errorElementoExiste] = useAgregarProducto()
     const navigate = useNavigate();
 
-    useEffect( () => {
-        const calcularTotal = () => {
-            let acumuladorTotal = 0
-
-            for (let item of carro) {
-                acumuladorTotal = acumuladorTotal + item.subtotal
-            }
-
-            return acumuladorTotal
-        }
-        setTotal(calcularTotal())
-    },[carro,total])
 
     const handleAddProduct = (element) => {
-        const validarOperacion = () => {
-            let resultadoOperacion = false
-
-            const elementoExiste = (element) => {
-                let estado = false
-
-                if (carro.length === 0) {
-                    estado = false
-                } else {
-                    for (let pizza of carro) {
-                        if (pizza.idProducto === element.id) {
-                            estado = true
-                            break
-                        }
-                    }
-                }
-                return estado
-            }
-
-            const elementoValido = (element) => {
-                if (typeof(element) === "object") {
-                    return true
-                } else {
-                    return false
-                }
-            }
-
-            if (elementoValido(element)) {
-                if (!elementoExiste(element)) {
-                    setCarro([...carro,
-                        {
-                            idProducto: element.id,
-                            src: element.img,
-                            nombre: element.name,
-                            vUnitario: element.price,
-                            cantidad: 1,
-                            subtotal: element.price
-                        }
-                    ])
-                    resultadoOperacion = true
-                }
-            }
-
-            return resultadoOperacion
-        }
-
-        if (!validarOperacion()) {
-            alert("Producto repetido")
-        }
+        setToogle(!toogle)
+        agregarProductoCarro(element)
     }
+
+    useEffect( ()=>{
+        if (errorObjeto) {
+            alert("Objeto erroneo")
+        }
+        if (errorElementoExiste) {
+            alert("El producto ya estaba en el maldito carro")
+        }
+    },[errorObjeto, errorElementoExiste, toogle])
 
     const handleShowPizzaDetail = (id) => {
         const asignarPizzaActiva = (id) => {
