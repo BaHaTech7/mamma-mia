@@ -13,7 +13,7 @@ const Navbar = () => {
             let acumuladorTotal = 0
 
             for (let item of carro) {
-                acumuladorTotal = acumuladorTotal + item.subtotal
+                acumuladorTotal = acumuladorTotal + item?.subtotal
             }
 
             return acumuladorTotal
