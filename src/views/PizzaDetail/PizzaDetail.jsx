@@ -12,7 +12,7 @@ const PizzaDetail = () => {
         let pizzaSeleccionada = {}
 
         for (let pizza of catalogo) {
-            if (pizza.id === id) {
+            if (pizza?.id === id) {
                 pizzaSeleccionada = pizza
                 break
             }

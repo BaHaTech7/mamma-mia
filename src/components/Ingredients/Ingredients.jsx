@@ -5,7 +5,7 @@ const Ingredients = (props) => {
     return (
         <ul>
             {
-                props.ingredientes.map( ingrediente => (
+                props.ingredientes?.map( ingrediente => (
                     <li key={ingrediente}>🍕 {ingrediente}</li>
                 ))
             }
