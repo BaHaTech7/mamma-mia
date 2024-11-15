@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import PizzaDetailCard from "../../components/PizzaDetailCart/PizzaDetailCard";
+import PizzaDetailCard from "../../components/PizzaDetailCard/PizzaDetailCard";
 import {useParams} from "react-router-dom";
 import {PizzeriaContext} from "../../context/PizzeriaProvider";
 
