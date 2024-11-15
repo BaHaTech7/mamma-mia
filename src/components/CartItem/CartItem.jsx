@@ -38,8 +38,6 @@ const CartItem = (props) => {
             }
         }
 
-        console.log(carroCopia)
-
         setCarro(carroCopia)
         setTotal(calcularTotal())
     }
