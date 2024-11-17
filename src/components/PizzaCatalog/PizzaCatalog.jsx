@@ -1,11 +1,13 @@
-import React, {useContext, useEffect, useRef} from 'react'
+import React, {useContext, useEffect} from 'react'
 import "./pizza_catalog.scss"
 import Ingredients from "../Ingredients/Ingredients"
 import {PizzeriaContext} from "../../context/PizzeriaProvider"
 import {obtenerCLP} from "../../util/clp_parser"
 import {useNavigate} from "react-router-dom"
-import {useAgregarProducto} from "../../hooks/useAgregarProducto";
-import Modal from "../Modal/Modal";
+import {useAgregarProducto} from "../../hooks/useAgregarProducto"
+import Modal from "../Modal/Modal"
+import ReactImageAppear from 'react-image-appear';
+
 
 const PizzaCatalog = () => {
 
@@ -37,7 +39,14 @@ const PizzaCatalog = () => {
                 catalogo.map( pizza => (
                     <article className="col-12 col-md-6 col-lg-4 col-xl-3 mb-3" key={pizza.id}>
                         <div className="card">
-                            <img src={pizza.img} className="card-img-top" alt={pizza.name}/>
+                            <ReactImageAppear
+                                src={pizza.img}
+                                showLoader={true}
+                                className="card-img-top"
+                                animation="bounceIn"
+                                animationDuration="1s"
+                                easing="ease-in"
+                            />
                             <div className="card-body">
                                 <h3 className="card-title">{pizza.name}</h3>
                                 <hr />

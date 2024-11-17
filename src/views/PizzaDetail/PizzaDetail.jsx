@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import PizzaDetailCard from "../../components/PizzaDetailCard/PizzaDetailCard";
 import {useParams} from "react-router-dom";
 import {PizzeriaContext} from "../../context/PizzeriaProvider";
