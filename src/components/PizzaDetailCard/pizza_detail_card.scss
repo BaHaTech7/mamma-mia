@@ -8,4 +8,8 @@
 .operaciones {
   @include mixins.establecerFlex();
   @include mixins.alinearComponentes(space-between, stretch);
+
+  a {
+    padding-top: 10px;
+  }
 }

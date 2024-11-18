@@ -57,10 +57,11 @@ const PizzaCatalog = () => {
                                             👀 Ver Más
                                         </button>
                                         &nbsp; &nbsp; &nbsp; &nbsp;
-                                        <button className="btn btn-danger"
-                                                onClick={ ()=>{handleAddProduct(pizza)}}>
+                                        <a      className="btn btn-danger"
+                                                onClick={ ()=>{handleAddProduct(pizza)}}
+                                                href="#cabecera">
                                             <i className="icono-carro fa-solid fa-cart-shopping"></i> Añadir
-                                        </button>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>

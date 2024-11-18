@@ -49,9 +49,11 @@ const PizzaDetailCard = (props) => {
                         <Ingredients ingredientes={pizzaActiva?.ingredients} />
                         <div className="operaciones mt-4">
                             <h2>Precio: {obtenerCLP(pizzaActiva?.price)}</h2>
-                            <button className="btn btn-danger" onClick={()=>handleAddProductDC(pizzaActiva)}>
+                            <a      className="btn btn-danger"
+                                    onClick={ ()=>{handleAddProductDC(pizzaActiva)}}
+                                    href="#cabecera">
                                 <i className="icono-carro fa-solid fa-cart-shopping"></i> Añadir
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

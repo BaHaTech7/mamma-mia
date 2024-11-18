@@ -24,7 +24,7 @@ const Layout = () => {
 
     return (
         <div className="container-xxl">
-            <header>
+            <header id="cabecera">
                 <Navbar />
             </header>
             <main>
