@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
 import "./cart_detail.scss"
-import CartItem from "../CartItem/CartItem";
-import CartSummary from "../CartSummary/CartSummary";
-import {PizzeriaContext} from "../../context/PizzeriaProvider";
+import CartItem from "../CartItem/CartItem"
+import CartSummary from "../CartSummary/CartSummary"
+import {PizzeriaContext} from "../../context/PizzeriaProvider"
 
 const CartDetail = () => {
 

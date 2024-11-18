@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 import "./cart_item.scss"
-import {obtenerCLP} from "../../util/clp_parser";
-import {PizzeriaContext} from "../../context/PizzeriaProvider";
+import {obtenerCLP} from "../../util/clp_parser"
+import {PizzeriaContext} from "../../context/PizzeriaProvider"
 
 const CartItem = (props) => {
 

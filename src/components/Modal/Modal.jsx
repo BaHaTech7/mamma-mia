@@ -1,7 +1,7 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import {Button, Modal as MessageBox} from "react-bootstrap"
-import {PizzeriaContext} from "../../context/PizzeriaProvider";
-import {useNavigate} from "react-router-dom";
+import {PizzeriaContext} from "../../context/PizzeriaProvider"
+import {useNavigate} from "react-router-dom"
 
 
 const Modal = () => {

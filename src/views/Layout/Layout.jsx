@@ -1,9 +1,9 @@
 import React, {useContext, useEffect} from 'react'
-import {Outlet} from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
-import {PizzeriaContext} from "../../context/PizzeriaProvider";
-import axios from "axios";
-import {config} from "../../services/catalogo";
+import {Outlet} from "react-router-dom"
+import Navbar from "../../components/Navbar/Navbar"
+import {PizzeriaContext} from "../../context/PizzeriaProvider"
+import axios from "axios"
+import {config} from "../../services/catalogo"
 
 const Layout = () => {
 

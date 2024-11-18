@@ -1,10 +1,12 @@
-import React, {useContext, useEffect} from 'react'
-import Ingredients from "../Ingredients/Ingredients";
+import React, {Suspense, useContext, useEffect} from 'react'
+import Ingredients from "../Ingredients/Ingredients"
 import "./pizza_detail_card.scss"
-import {PizzeriaContext} from "../../context/PizzeriaProvider";
-import {obtenerCLP} from "../../util/clp_parser";
-import {useAgregarProducto} from "../../hooks/useAgregarProducto";
-import Modal from "../Modal/Modal";
+import {PizzeriaContext} from "../../context/PizzeriaProvider"
+import {obtenerCLP} from "../../util/clp_parser"
+import {useAgregarProducto} from "../../hooks/useAgregarProducto"
+import Modal from "../Modal/Modal"
+import PizzaLoader from "../PizzaLoader/PizzaLoader"
+const GenericPicture = React.lazy( () => import("../GenericPicture/GenericPicture"))
 
 const PizzaDetailCard = (props) => {
 
@@ -32,7 +34,11 @@ const PizzaDetailCard = (props) => {
         <div className="card mb-3 mt-5">
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src={pizzaActiva?.img} className="img-fluid rounded-start img-tarjeta" alt={pizzaActiva?.name} />
+                    <Suspense fallback={<PizzaLoader />}>
+                        <GenericPicture src={pizzaActiva?.img}
+                                        class="img-fluid rounded-start img-tarjeta"
+                                        alt={pizzaActiva?.name} />
+                    </Suspense>
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">

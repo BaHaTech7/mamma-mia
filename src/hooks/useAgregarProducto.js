@@ -1,5 +1,5 @@
-import {useContext, useEffect, useState} from "react";
-import {PizzeriaContext} from "../context/PizzeriaProvider";
+import {useContext, useEffect, useState} from "react"
+import {PizzeriaContext} from "../context/PizzeriaProvider"
 
 export const useAgregarProducto = () => {
 

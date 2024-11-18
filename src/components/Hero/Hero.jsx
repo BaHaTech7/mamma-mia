@@ -1,5 +1,5 @@
 import React from 'react'
-import PizzaHero from "../../assets/img/pizza_hero.jpg";
+import PizzaHero from "../../assets/img/pizza_hero.jpg"
 import "./hero.scss"
 const Hero = () => {
     return (

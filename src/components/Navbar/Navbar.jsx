@@ -1,8 +1,8 @@
 import React, {useContext, useEffect} from 'react'
-import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom"
 import "./navbar.scss"
-import {PizzeriaContext} from "../../context/PizzeriaProvider";
-import {obtenerCLP} from "../../util/clp_parser";
+import {PizzeriaContext} from "../../context/PizzeriaProvider"
+import {obtenerCLP} from "../../util/clp_parser"
 
 const Navbar = () => {
 

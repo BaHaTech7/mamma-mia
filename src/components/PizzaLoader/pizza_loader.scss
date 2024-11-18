@@ -1,0 +1,27 @@
+.pizza-loader {
+  height: 366.09px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (min-width: 768px) and (max-width: 991px){
+  .pizza-loader {
+    height: 238.28px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .pizza-loader {
+    height: 202.78px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .pizza-loader {
+    height: 202px;
+  }
+}
+

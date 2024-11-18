@@ -1,11 +1,13 @@
-import React, {useContext, useEffect, useRef} from 'react'
+import React, {useContext, useEffect, Suspense} from 'react'
 import "./pizza_catalog.scss"
 import Ingredients from "../Ingredients/Ingredients"
 import {PizzeriaContext} from "../../context/PizzeriaProvider"
 import {obtenerCLP} from "../../util/clp_parser"
 import {useNavigate} from "react-router-dom"
-import {useAgregarProducto} from "../../hooks/useAgregarProducto";
-import Modal from "../Modal/Modal";
+import {useAgregarProducto} from "../../hooks/useAgregarProducto"
+import Modal from "../Modal/Modal"
+import PizzaLoader from "../PizzaLoader/PizzaLoader"
+const GenericPicture = React.lazy( () => import("../GenericPicture/GenericPicture"))
 
 const PizzaCatalog = () => {
 
@@ -37,7 +39,9 @@ const PizzaCatalog = () => {
                 catalogo.map( pizza => (
                     <article className="col-12 col-md-6 col-lg-4 col-xl-3 mb-3" key={pizza.id}>
                         <div className="card">
-                            <img src={pizza.img} className="card-img-top" alt={pizza.name}/>
+                            <Suspense fallback={<PizzaLoader />}>
+                                <GenericPicture src={pizza.img} class="card-img-top" alt={pizza.name} />
+                            </Suspense>
                             <div className="card-body">
                                 <h3 className="card-title">{pizza.name}</h3>
                                 <hr />
