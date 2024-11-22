@@ -3,7 +3,7 @@
 Este proyecto fue creado con CRA [Create React App](https://github.com/facebook/create-react-app).
 
 ## Autor(es)
-- [@BaHaMuT7](https://github.com/BaHaMuT7)
+- [@BaHaMuT77](https://github.com/BaHaMuT77)
 
 ## Tecnologías
 
