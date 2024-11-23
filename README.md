@@ -3,7 +3,7 @@
 Este proyecto fue creado con CRA [Create React App](https://github.com/facebook/create-react-app).
 
 ## Autor(es)
-- [@BaHaMuT77](https://github.com/BaHaMuT77)
+- [@BaHaTech7](https://github.com/BaHaTech7)
 
 ## Tecnologías
 
@@ -28,14 +28,9 @@ Este proyecto fue creado con CRA [Create React App](https://github.com/facebook/
 
 ## Objetivo
 
-El objetivo del proyecto es utilizar **React Router y la Context API** con el fin de  crear una aplicación para una
-pizzería, que pueda mantener el catálogo de pizzas y el detalle de cada item a comprar (carro, con opcion de cambiar
+El objetivo del proyecto es utilizar **React Router y la Context API** con el fin de  crear una landing page para una
+pizzería, que pueda manejar el catálogo de pizzas y el detalle de cada item a comprar (carro, con opcion de cambiar
 cantidad y eliminar item). Ésta debe ser capaz de actualizar el total cada vez que haya un cambio en el pedido.
-
-- Se agrega sugerencia de la tutora (modal luego de intentar agregar producto repetido)
-- Se agrega sugerencia del profesor (botón eliminar por cada item del carro)
-- Como parte de mi contribución como alumno, agregué un gancho personalizado para agregar items al carro y un preloader
-para las imágenes del catalogo y la imagen del detalle. (Lazy load)
 
 ## Descripción
 
@@ -82,11 +77,9 @@ http://mammamia.bahatech.cl
 
 ## Diagrama de componentes
 
-<img src="https://sat02pap001files.storage.live.com/y4mX0L7LFrPDoAbqVqZ_Uvo3Fk1DxJB1e9PeNe_v4dFN7_Gzen5qfWVQcxuhv2v-Dqplm9nYPejWNpVRIYNaWuYcyCTbhnOFOC38JTsZaAk2uEv8vkViAM7N3n_kf2o1i64ssfH-UQLZiu7xAW1KdrPO-prLzUxthq_TTaI8FAoxQ4kGk59cJ4AFxBhO0sjLe38?width=2052&height=1150&cropmode=none">
+**Por editar**
 
 
 ## Contacto
 
 **Correo:** bahamut@bahatech.cl
-
-**Nombre de alumno Slack:** BaHaMuT (Raúl Pardo)
